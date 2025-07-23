@@ -1,6 +1,6 @@
 # Half Adder Simulation using Verilator and GTKWave
 
-## 🔧 Project Overview
+##  Project Overview
 
 This project demonstrates the simulation of a **Half Adder** using Verilog HDL with **Verilator** as the simulator and **GTKWave** as the waveform viewer. It also includes a testbench written in C++ to verify the functionality.
 
@@ -52,9 +52,7 @@ sudo apt install gtkwave
 
 ##  Project Files
 
- ```bash
  create a half_adder.v verilog file and its testbench tb_testbench.cpp using Visual Studio Code
-```
  
 ##  Running the Simulation
 
