@@ -1,3 +1,7 @@
+// MIT License
+// Copyright (c) 2025 Muhammad Owais
+// See the LICENSE file in the root of this project for full license information.
+
 #include "Vhalf_adder.h"
 #include "verilated.h"
 #include "verilated_vcd_c.h"
