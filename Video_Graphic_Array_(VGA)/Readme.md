@@ -66,8 +66,6 @@ gtkwave vga.vcd
 ```
 
 ---
-
----
 ##  Running the Simulation With SDL2
 
 ### 1. Compile with Verilator and SDL2 Support:
@@ -90,7 +88,7 @@ make -C obj_dir -j -f Vvga_controller_800x600.mk Vvga_controller_800x600
 ```bash
 ./obj_dir/Vvga_controller_800x600
 ```
-
+---
 ##  Author
 
 Muhammad Owais  
