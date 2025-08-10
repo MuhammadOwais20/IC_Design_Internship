@@ -1,3 +1,4 @@
+
 module display_using_sram(
     input [10:0] hcount,
     input [9:0] vcount,
@@ -8,14 +9,15 @@ module display_using_sram(
     output [19:0] sram_address,
     output reg [7:0] red,
     output reg [7:0] green,
-    output reg [7:0] blue
+    output reg [7:0] blue,
+    output reg video_on
 );
 
     wire display_area = (hcount < H_DISPLAY) && (vcount < V_DISPLAY);
-
     assign sram_address = vcount * H_DISPLAY + hcount;
 
     always @(posedge clk) begin
+        video_on <= display_area;
         if (display_area) begin
             red   <= {sram_data[15:11], 3'b000};
             green <= {sram_data[10:5],  2'b00};
