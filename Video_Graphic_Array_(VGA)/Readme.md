@@ -37,14 +37,14 @@ sudo apt install libsdl2-dev
 ---
 ##  Project Files
 
- create a vga_controller_800x600.v verilog file and its two testbench's. tb_vga_gtkwave.cpp for GTKWave Output and vga_controller_800x600_sdl.cpp for SDL2 using Visual Studio Code
+ create a vga_controller.v verilog file and its two testbench's. tb_vga_gtkwave.cpp for GTKWave Output and vga_controller_800x600_sdl.cpp for SDL2 using Visual Studio Code
  
 ##  Running the Simulation With GTKWave
 
 ### 1. Compile with Verilator:
 
 ```bash
-verilator -Wall --cc vga_controller_800x600.v --exe tb_vga_gtkwave.cpp --trace
+verilator -Wall --cc vga_controller.v --exe tb_vga_gtkwave.cpp --trace
 ```
 
 ### 2. Build the Simulation:
@@ -71,7 +71,7 @@ gtkwave vga.vcd
 ### 1. Compile with Verilator and SDL2 Support:
 
 ```bash
-verilator -cc vga_controller_800x600.v \
+verilator -cc vga_controller.v \
   --exe vga_controller_800x600_sdl.cpp \
   --CFLAGS -I/usr/include/SDL2 \
   --LDFLAGS -lSDL2
@@ -80,13 +80,13 @@ verilator -cc vga_controller_800x600.v \
 ### 2. Build the Simulation Executable:
 
 ```bash
-make -C obj_dir -j -f Vvga_controller_800x600.mk Vvga_controller_800x600
+make -C obj_dir -j -f Vvga_controller.mk Vvga_controller
 ```
 
 ### 3. Run the SDL2 Visualizer:
 
 ```bash
-./obj_dir/Vvga_controller_800x600
+./obj_dir/Vvga_controller
 ```
 ---
 ##  Author
