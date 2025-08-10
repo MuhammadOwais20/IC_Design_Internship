@@ -1,4 +1,4 @@
-module vga_controller_800x600(
+module vga_controller(
     input clk,           
     input reset,         
     input [15:0] sram_data,  
@@ -9,10 +9,10 @@ module vga_controller_800x600(
     output [9:0]  vc,
     output  [7:0] red,
     output  [7:0] green,
-    output  [7:0] blue
+    output  [7:0] blue,
+    output video_on     
 );
 
-    // Horizontal counter
     H_Counter Horizontal(
         .clk(clk),
         .reset(reset),
@@ -20,7 +20,6 @@ module vga_controller_800x600(
         .hsync(hsync)
     );
 
-    // Vertical counter
     V_Counter Vertical(
         .clk(clk),
         .reset(reset),
@@ -29,7 +28,6 @@ module vga_controller_800x600(
         .vsync(vsync)
     );
 
-    // Display and SRAM read
     display_using_sram Addressing(
         .clk(clk),
         .hcount(hc),
@@ -40,9 +38,9 @@ module vga_controller_800x600(
         .sram_address(sram_address),
         .red(red),
         .green(green),
-        .blue(blue)
+        .blue(blue),
+        .video_on(video_on)  
     );
-
 
 endmodule
 
